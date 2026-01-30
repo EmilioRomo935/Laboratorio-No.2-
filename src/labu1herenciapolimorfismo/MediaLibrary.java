@@ -4,22 +4,29 @@
  */
 package labu1herenciapolimorfismo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author alopezorozco
  */
-public class MediaLibrary {
+public class MediaLibrary{
     // TODO 20: Agrega aquí un campo de tipo ArrayList
     // El nombre del campo será de tipo Media
     // Código a escribir: private ArrayList<Media> medios;
     // Importa el paquete java.util.ArrayList;
+    private ArrayList <Media> medios;
+    public static void main(String[] args) {
+        ArrayList <Media> medios= new ArrayList<>();
+    }
     
-  
     // TODO 21: Escribe el constructor de la clase e inicializa
     // el ArrayList creado anteriormente
     // Escribe este código en el constructor: medios = new ArrayList<>();
     // Nota: el constructor no recibe parámetros
-
+    public MediaLibrary() {
+        medios = new ArrayList<>();
+    }
     
     // TODO 22: Ahora crea un método que se llame addLibrary
     // Este método añadira elementos a la librería MediaLibrary
@@ -29,7 +36,9 @@ public class MediaLibrary {
     // para adicionar elementos al ArrayList escribe
     // el nombre del campo de tipo arraylist y usa el método add
     // código dentro del método: medios.add(mediaItem);
-
+    public void addLibrary(Media mediaItem){
+        medios.add(mediaItem);
+    }
     
     // TODO 23: Ahora crearemos un método que nos permita
     // poner en play o reproducción todos nuestros elementos
@@ -48,4 +57,13 @@ public class MediaLibrary {
          }    
        }
     */
+    public void playAllItems(){
+        if (medios.isEmpty()){
+         System.out.println("No hay medios en la lista");
+        }else{
+         for(Media media : medios){
+             media.play();
+         }    
+       }
+    }
 }
